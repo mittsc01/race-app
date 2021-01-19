@@ -15,18 +15,18 @@ export default function MyResults(props){
                     </ul>
                     <h2>Add Finisher</h2>
                     <form>
-                        <label for="name">Name</label>
+                        <label htmlFor="name">Name</label>
                         <input name="name" type="text" placeholder="finisher" required/>
-                        <label for="place">Place</label>
+                        <label htmlFor="place">Place</label>
                         <input name="place" type="number" min={1} placeholder={1} required/>
-                        <label for="time">Time</label>
+                        <label htmlFor="time">Time</label>
                         <input name="time" type="text" placeholder="mm:ss"/>
-                        <label for="gender">Gender</label>
+                        <label htmlFor="gender">Gender</label>
                         <select name="gender">
                             <option value="M">M</option>
                             <option value="F">F</option>
                         </select>
-                        <label for="age">Age</label>
+                        <label htmlFor="age">Age</label>
                         <input name="age" type="number" placeholder="age" required />
                         <button type="submit">Submit</button>
                         <button onClick={()=>props.history.goBack()}>Back</button>    
