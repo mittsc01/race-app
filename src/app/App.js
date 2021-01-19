@@ -12,7 +12,6 @@ import EditRace from '../edit-race'
 import AddRace from '../add-race'
 import About from '../about'
 import Results from '../results'
-import moment from 'moment'
 import './app.css'
 
 

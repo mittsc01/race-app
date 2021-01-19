@@ -5,7 +5,7 @@ export default function Results(props){
     return (
         <RaceContext.Consumer>
             {context=>{
-                const race = context.races.find(race=>race.id==props.match.params.id)
+                const race = context.races.find(race=>race.id === parseInt(props.match.params.id))
                 const results = race.results
                                     .map((result,i)=><li key={`result-${i}`}>{`${result.place}. ${result.name}`}</li>)
             return (

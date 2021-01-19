@@ -12,7 +12,7 @@ export default class AddRace extends React.Component {
     }
 
     render(){
-        const raceEdit = this.context.races.find(race=>race.id==this.props.match.params.id)
+        
         
         
         return (

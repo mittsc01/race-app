@@ -1,6 +1,5 @@
 import React from 'react'
 import RaceContext from './RaceContext'
-import moment from 'moment'
 export default class EditRace extends React.Component {
     static contextType = RaceContext
 
@@ -10,8 +9,8 @@ export default class EditRace extends React.Component {
 
     }
     render(){
-        const raceEdit = this.context.races.find(race=>race.id==this.props.match.params.id)
-        console.log(raceEdit)
+        const raceEdit = this.context.races.find(race=>race.id===parseInt(this.props.match.params.id))
+        
         
         return (
             <form className='edit-race' onSubmit={this.handleSubmit}>

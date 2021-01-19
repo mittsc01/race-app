@@ -7,7 +7,7 @@ export default function RaceDetail(props) {
         <RaceContext.Consumer>
             {context => {
                 //console.log(context)
-                const race = context.races.find(race => race.id == props.match.params.id || {})
+                const race = context.races.find(race => race.id === parseInt(props.match.params.id) )
 
 
 
