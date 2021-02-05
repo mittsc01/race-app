@@ -14,7 +14,7 @@ const RacesService = {
               : res.json()
           )
     },
-    async getData (props){
+    async getMyData (props){
 
         const results = await RacesService.getMyResultsByRaceId(props.match.params.id)
         const race = await RacesService.getRaceById(props.match.params.id)
@@ -23,6 +23,15 @@ const RacesService = {
         
         return {results,...race}
     },
+    async getData (props){
+
+      const results = await RacesService.getResultsByRaceId(props.match.params.id)
+      const race = await RacesService.getRaceById(props.match.params.id)
+      //sort results
+      results.sort((a,b)=>a.place-b.place)
+      
+      return {results,...race}
+  },
 
     postRace(postBody){
         return fetch(`${config.API_ENDPOINT}/my-races/`, {

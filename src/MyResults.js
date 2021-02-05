@@ -10,7 +10,7 @@ export default function MyResults(props) {
     useEffect( () => {
         
         (async () => {
-            const data =  await RacesService.getData(props)
+            const data =  await RacesService.getMyData(props)
         setResults(data)})()
     }, [props])
 
