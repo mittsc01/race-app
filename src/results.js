@@ -1,28 +1,38 @@
-import React from 'react'
-import RaceContext from './RaceContext'
+import React, { useState, useEffect } from 'react'
 
-export default function Results(props){
-    return (
-        <RaceContext.Consumer>
-            {context=>{
-                const race = context.races.find(race=>race.id === parseInt(props.match.params.id))
-                const results = race.results
-                                    .map((result,i)=><li key={`result-${i}`}>{`${result.place}. ${result.name}`}</li>)
-            return (
-                <div>
-                    <h2>{race.name}</h2>
-                    <p>{`${race.city}, ${race.state} ${race.date}.`}</p>
-                    <ul>
-                        {results}
-                    </ul>
-                    <button onClick={()=>props.history.goBack()}>Back</button>
-                </div>
-                
-            )
-                
-            }}
-        </RaceContext.Consumer>
+import RacesService from './services/races-service'
+
+export default function Results(props) {
+    const [myResults, setResults] = useState({})
+    useEffect( () => {
         
+        (async () => {
+            
+            
+            const myResults =  await RacesService.getData(props)
+            
+        setResults(myResults)})()
+    }, [props])
+
+    
+
+
+
+
+    const results = myResults.results
+        ? myResults.results
+        .map((result, i) => <li key={`result-${i}`}>{`${result.place}. ${result.name}`}</li>)
+        : null
+    return (
+        <div>
+            {myResults.name?<h2>{myResults.name}</h2>:null}
+            {results?<ul>
+                {results}
+            </ul>:<p>No results have been posted for this event.</p>}
+            <button onClick={() => props.history.goBack()}>Back</button>
+        </div>
+
     )
+
 }
 

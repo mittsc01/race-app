@@ -1,0 +1,12 @@
+li {
+    display: flex;
+    flex-direction: row;
+}
+.edit-delete {
+    margin-left: 10px;
+    height: 20px;
+}
+
+li {
+    margin: 10px;
+}

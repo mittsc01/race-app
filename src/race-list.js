@@ -1,16 +1,30 @@
 import React from 'react'
-import RaceContext from './RaceContext'
 
-export default function RaceList(props) {
-    return (
-        <div>
-            {props.races.map(item => {
-                return (
-                    <Link to={`/races/${item.id}`}>{item.name}</Link>
-                )
+import RacesService from './services/races-service'
 
-            })
-            }
-        </div>
-    )
+export default class RaceList {
+
+    state = {
+        races: []
+    }
+
+    async componentDidMount(){
+         this.setState({races: await RacesService.getAllRaces()})
+    }
+
+    render() {
+        console.log(this.state.races)
+        return (
+            
+            <div>
+                {this.state.races.map(item => {
+                    return (
+                        <Link to={`/races/${item.id}`}>{item.name}</Link>
+                    )
+
+                })
+                }
+            </div>
+        )
+    }
 }

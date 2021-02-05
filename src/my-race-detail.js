@@ -1,29 +1,27 @@
-import React from 'react'
-import RaceContext from './RaceContext'
-import {Link} from 'react-router-dom'
+import React, { useEffect, useState} from 'react'
+import { Link } from 'react-router-dom'
+import RacesService from './services/races-service'
 
 export default function MyRaceDetail(props) {
+    const [race, setRace] = useState({})
+    useEffect( () => {
+        
+        (async () => {
+            const data =  await RacesService.getData(props)
+        setRace(data)})()
+    }, [props])
+
     return (
-        <RaceContext.Consumer>
-            {context => {
-                
-                const myRace = context.races.find(race => race.id === parseInt(props.match.params.id))
-                
-
-
-
-                return (
-                    <div>
-                        <p>{myRace.name}</p>
-                        <p>Time: {myRace.time}</p>
-                        <p>Location: {myRace.city}, {myRace.state}</p>
-                        {myRace.results?<p><Link to={`/my-races/${myRace.id}/results`}>Results</Link></p>:null}
-                        <button onClick={()=>props.history.goBack()}>Back</button>
-                    </div>
-                )
-            }
-            }
-        </RaceContext.Consumer>
+        <div>
+            <p>{race.name}</p>
+            <p>Time: {race.time}</p>
+            <p>Location: {race.city}, {race.state}</p>
+            <p><Link to={`/my-races/${race.id}/results`}>Results</Link></p>
+            <button onClick={() => props.history.goBack()}>Back</button>
+        </div>
     )
+
+
+
 
 }

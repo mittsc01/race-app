@@ -14,3 +14,18 @@ form {
     margin: auto;
     
 }
+.submit {
+    margin: 0
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    
+}
+a:visited, a:active {
+    color: blue
+}
