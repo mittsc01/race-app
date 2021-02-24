@@ -2,6 +2,8 @@ import React from 'react'
 
 import RacesService from './services/races-service'
 
+import './add-race.css'
+
 export default class AddRace extends React.Component {
 
 

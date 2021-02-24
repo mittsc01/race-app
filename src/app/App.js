@@ -95,7 +95,6 @@ class App extends React.Component {
   }
   render(){
     const contextValue = {
-      races: this.state.races,
       login: this.state.login,
       handleLogin: this.handleLogin,
       handleLogout: this.handleLogout,

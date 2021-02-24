@@ -1,6 +1,7 @@
 import React from 'react'
 import RaceContext from './RaceContext'
 import RacesService from './services/races-service'
+import './add-race.css'
 export default class EditRace extends React.Component {
     static contextType = RaceContext
 
@@ -120,8 +121,8 @@ export default class EditRace extends React.Component {
                 <label htmlFor="distance">Race Distance</label>
                 <input name='distance' type='text' defaultValue={raceEdit.distance} />
 
-                <button type="submit">Edit Race</button>
-                <button type="button" onClick={() => this.props.history.goBack()}>Back</button>
+                <button type="submit" className='submit'>Edit Race</button>
+                <button type="button" className='submit' onClick={() => this.props.history.goBack()}>Back</button>
 
             </form>
         )

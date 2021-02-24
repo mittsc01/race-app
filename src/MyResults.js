@@ -67,14 +67,16 @@ export default function MyResults(props) {
 
 
     }
-
-
+    
 
     const results = myResults.results
         ? myResults.results
-        .map((result, i) => <li key={`result-${i}`}>{`${result.place}. ${result.name}`}
+        .map((result, i) => 
+        <li key={`result-${i}`}>{`${result.place}. ${result.name}`}
             <button id={result.id} onClick={e => handleDelete(e)}>Delete</button>
-        </li>)
+        </li>
+        )
+        
         : null
     return (
         <div className="my-results">
@@ -105,8 +107,8 @@ export default function MyResults(props) {
                 </select>
                 <label htmlFor="age">Age</label>
                 <input name="age" type="number" placeholder="age" required />
-                <button type="submit">Submit</button>
-                <button onClick={() => props.history.goBack()}>Back</button>
+                <button className="submit" type="submit">Submit</button>
+                <button className="submit" onClick={() => props.history.goBack()}>Back</button>
             </form>
         </div>
 
