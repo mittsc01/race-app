@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div
+  className="my-results"
+>
+  <p>
+    No results currently available for this event.
+  </p>
+  <h3>
+    Add Finisher
+  </h3>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="name"
+    >
+      Name
+    </label>
+    <input
+      name="name"
+      placeholder="finisher"
+      required={true}
+      type="text"
+    />
+    <label
+      htmlFor="status"
+    >
+      Status
+    </label>
+    <input
+      defaultValue="Finisher"
+      name="status"
+      type="text"
+    />
+    <label
+      htmlFor="place"
+    >
+      Place
+    </label>
+    <input
+      min={1}
+      name="place"
+      placeholder={1}
+      type="number"
+    />
+    <label
+      htmlFor="time"
+    >
+      Time
+    </label>
+    <input
+      name="time"
+      placeholder="mm:ss"
+      type="text"
+    />
+    <label
+      htmlFor="gender"
+    >
+      Gender
+    </label>
+    <select
+      name="gender"
+    >
+      <option
+        value="M"
+      >
+        M
+      </option>
+      <option
+        value="F"
+      >
+        F
+      </option>
+    </select>
+    <label
+      htmlFor="age"
+    >
+      Age
+    </label>
+    <input
+      name="age"
+      placeholder="age"
+      required={true}
+      type="number"
+    />
+    <button
+      className="submit"
+      type="submit"
+    >
+      Submit
+    </button>
+    <button
+      className="submit"
+      onClick={[Function]}
+    >
+      Back
+    </button>
+  </form>
+</div>
+`;

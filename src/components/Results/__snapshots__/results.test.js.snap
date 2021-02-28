@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div>
+  <p>
+    No results have been posted for this event.
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Back
+  </button>
+</div>
+`;

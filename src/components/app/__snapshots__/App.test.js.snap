@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<main
+  className="App"
+>
+  <header
+    id="app-header"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      About
+    </a>
+    <a
+      href="/races"
+      onClick={[Function]}
+    >
+      Search Races
+    </a>
+    <a
+      href="/login"
+      onClick={[Function]}
+    >
+      Login
+    </a>
+    <a
+      href="/register"
+      onClick={[Function]}
+    >
+      Register
+    </a>
+  </header>
+  <div
+    className="about-view"
+  >
+    <h1>
+      Race Director
+    </h1>
+    <p>
+      Welcome to the Race Director App.  Register to begin creating races with some basic information.
+    </p>
+  </div>
+</main>
+`;

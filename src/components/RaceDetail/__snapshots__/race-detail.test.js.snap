@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div>
+  <h2 />
+  <p>
+    Time: 
+  </p>
+  <p>
+    Location: 
+    , 
+  </p>
+  <p>
+    <a
+      href="/races/undefined/results"
+      onClick={[Function]}
+    >
+      Results
+    </a>
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Back
+  </button>
+</div>
+`;

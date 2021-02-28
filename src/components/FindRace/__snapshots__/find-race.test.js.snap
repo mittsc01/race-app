@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div
+  className="race-list"
+>
+  <form
+    id="search-bar"
+  >
+    <input
+      className="race-search"
+      name="race-search"
+      onChange={[Function]}
+      placeholder="Search for race"
+      type="text"
+    />
+  </form>
+  <ul />
+</div>
+`;
