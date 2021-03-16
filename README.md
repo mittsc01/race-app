@@ -14,7 +14,7 @@
 
 In the project directory, you can run:
 
-### Description
+## Description
 
 Race Director is a simple way to add races and results.  It's as straightforward as creating an account and creating a race.  Could easily be used by a local running club or cross country team to post race information and results publicly without a lot of fuss.
 
