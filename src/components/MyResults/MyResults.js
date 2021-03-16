@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import RacesService from '../../services/races-service'
+import Collapsible from 'react-collapsible'
+import './MyResults.css'
 
 
 
 
 export default function MyResults(props) {
-    const [myResults, setResults] = useState({})
+    const [myResults, setResults] = useState({results: [],name: null})
     
     useEffect( () => {
         
@@ -69,10 +71,11 @@ export default function MyResults(props) {
     }
     
 
-    const results = myResults.results
+    const results = myResults.results.length
         ? myResults.results
         .map((result, i) => 
-        <li key={`result-${i}`}>{`${result.place}. ${result.name}`}
+        <li key={`result-${i}`}><span className='left-side'>{`${result.place}. ${result.name}`}</span>
+        <span className="right-side">{result.time}</span>
             <button id={result.id} onClick={e => handleDelete(e)}>Delete</button>
         </li>
         )
@@ -86,11 +89,12 @@ export default function MyResults(props) {
             }
             
                 {results
-                ? <ul>{results}</ul>
+                ? <ul id="myul">{results}</ul>
                 : <p>No results currently available for this event.</p>
                 }
             
             <h3>Add Finisher</h3>
+            <Collapsible transitionTime={50} triggerWhenOpen={<button>Close</button>} trigger={<button>+ Finisher</button>}>
             <form onSubmit={(e) => handleAdd(e)}>
                 <label htmlFor="name">Name</label>
                 <input name="name" type="text" placeholder="finisher" required />
@@ -110,6 +114,8 @@ export default function MyResults(props) {
                 <button className="submit" type="submit">Submit</button>
                 <button className="submit" onClick={() => props.history.goBack()}>Back</button>
             </form>
+            </Collapsible>
+            
         </div>
 
     )

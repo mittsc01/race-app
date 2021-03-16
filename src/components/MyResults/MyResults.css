@@ -1,0 +1,6 @@
+#myul li:nth-child(odd) {
+    background-color: rgba(0, 255, 234, 0.884);
+}
+#myul li:nth-child(even) {
+    background-color: rgba(243, 236, 136, 0.904);
+}

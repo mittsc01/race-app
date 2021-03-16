@@ -4,33 +4,34 @@ import { Link } from 'react-router-dom'
 import './race-detail.css'
 
 export default function RaceDetail(props) {
-    const [run, setRun] = useState({})
+    const [race, setRace] = useState({})
     useEffect( () => {
         
         (async () => {
             const data =  await RacesService.getRaceById(props.match.params.id)
-        setRun(data)})()
+        setRace(data)})()
     }, [props])
-    const race = {...run}
-    if (race.time){
-        race.time = makeTime(race.time)
-    }
+   
 
-    function makeTime(string){
-        
-        const timeArray = string.split(":")
-        const hours = parseInt(timeArray[0])
-        const minutes = timeArray[1]
-        if (hours === 0){
+    function prettifyDate(astring){
+        const [year,month,day] = astring.split('-')
+        const months =['January', 'February', 'March', 'April', 'May', 'June', 'July','August','September','October','November','December']
+        return `${parseInt(day)} ${months[month-1]}, ${year}`
+    }
+    //converts string from 24 hour time to 12 hour time with AM/PM
+    function prettifyTime(time){
+        const [hours,minutes]=time.split(':')
+        if (hours>12){
+            return `${parseInt(hours)-12}:${minutes} PM`
+
+        }
+        if (parseInt(hours) === 12){
+            return `${hours}:${minutes} PM`
+        }
+        if (parseInt(hours) === 0){
             return `12:${minutes} AM`
         }
-        if (hours < 12){
-            return `${hours}:${minutes} AM`
-        }
-        if (hours === 12){
-            return `12:${minutes} PM`
-        }
-        return `${hours - 12}:${minutes} PM`
+        return `${parseInt(hours)}:${minutes} AM`
     }
 
 
@@ -38,7 +39,8 @@ export default function RaceDetail(props) {
     return (
         <div>
             <h2>{race.name}</h2>
-            <p>Time: {race.time}</p>
+            <p>Date: {race.date?prettifyDate(race.date):null}</p>
+            <p>Time: {race.time?prettifyTime(race.time):null}</p>
             <p>Location: {race.city}, {race.state}</p>
             <p><Link to={`/races/${race.id}/results`}>Results</Link></p>
             <button onClick={() => props.history.goBack()}>Back</button>

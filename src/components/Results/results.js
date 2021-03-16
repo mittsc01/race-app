@@ -3,13 +3,14 @@ import React, { useState, useEffect } from 'react'
 import RacesService from '../../services/races-service'
 
 export default function Results(props) {
-    const [myResults, setResults] = useState({})
+    const [myResults, setResults] = useState({results: [],name: null})
     useEffect( () => {
         
         (async () => {
             
             
             const myResults =  await RacesService.getData(props)
+            //console.log(myResults.results)
             
         setResults(myResults)})()
     }, [props])
@@ -19,7 +20,7 @@ export default function Results(props) {
 
 
 
-    const results = myResults.results
+    const results = myResults.results.length
         ? myResults.results
         .map((result, i) => <li key={`result-${i}`}>{`${result.place}. ${result.name}`}</li>)
         : null
