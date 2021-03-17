@@ -12,7 +12,6 @@
 * To run: `npm start`
 * To test: `npm test` 
 
-In the project directory, you can run:
 
 ## Description
 
