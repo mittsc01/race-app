@@ -7,12 +7,20 @@ import './MyResults.css'
 
 
 export default function MyResults(props) {
-    const [myResults, setResults] = useState({results: [],name: null})
+
+    function prettifyDate(date) {
+        const [year, month, day] = date.split('-')
+
+        return `${parseInt(month)}/${parseInt(day)}/${year}`
+    }
+
+    const [myResults, setResults] = useState({results: [],name: null, date: null, state:null, city: null})
     
     useEffect( () => {
         
         (async () => {
             const data =  await RacesService.getMyData(props)
+            
         setResults(data)})()
     }, [props])
 
@@ -87,13 +95,32 @@ export default function MyResults(props) {
             ? <h2>{myResults.name}</h2>
             :null
             }
+            <p className="race-info">
+            {myResults.city
+            ? <span>{myResults.city} </span>
+            :null
+            }
+            {myResults.state
+            ? <span>{myResults.state}, </span>
+            :null
+            }
+            {myResults.date
+            ? <span>{prettifyDate(myResults.date)}</span>
+            :null
+            }
+            </p>
+            
+            
+            
+            
+            
             
                 {results
                 ? <ul id="myul">{results}</ul>
                 : <p>No results currently available for this event.</p>
                 }
             
-            <h3>Add Finisher</h3>
+            
             <Collapsible transitionTime={50} triggerWhenOpen={<button>Close</button>} trigger={<button>+ Finisher</button>}>
             <form onSubmit={(e) => handleAdd(e)}>
                 <label htmlFor="name">Name</label>

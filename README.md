@@ -15,7 +15,7 @@
 
 ## Description
 
-Race Director is a simple way to add races and results.  It's as straightforward as creating an account and creating a race.  Could easily be used by a local running club or cross country team to post race information and results publicly without a lot of fuss.
+Race Director is a simple way to add races and results.  It's as straightforward as creating an account and creating a race.  Use for your local running club or cross country team to share race information and results publicly without a lot of fuss.
 
 ## Technologies
 * ReactJS

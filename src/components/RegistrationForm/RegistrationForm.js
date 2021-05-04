@@ -54,7 +54,7 @@ export default class RegistrationForm extends React.Component {
             <input type="password" name="password"/>
             <label htmlFor="repeat_password">Repeat Password</label>
             <input type="password" name="repeat_password"/>
-            <button type="submit">Register</button>
+            <button className="submit" type="submit">Register</button>
         </form>
             )
     }
