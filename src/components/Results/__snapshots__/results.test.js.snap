@@ -2,6 +2,9 @@
 
 exports[`renders the UI as expected 1`] = `
 <div>
+  <p
+    className="race-info"
+  />
   <p>
     No results have been posted for this event.
   </p>

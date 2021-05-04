@@ -4,6 +4,9 @@ exports[`renders the UI as expected 1`] = `
 <div>
   <h2 />
   <p>
+    Date: 
+  </p>
+  <p>
     Time: 
   </p>
   <p>

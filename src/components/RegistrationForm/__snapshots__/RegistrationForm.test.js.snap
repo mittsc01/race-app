@@ -41,6 +41,7 @@ exports[`renders the UI as expected 1`] = `
     type="password"
   />
   <button
+    className="submit"
     type="submit"
   >
     Register
