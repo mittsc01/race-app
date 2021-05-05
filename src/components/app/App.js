@@ -104,7 +104,7 @@ class App extends React.Component {
       <main className='App'>
         <header id="app-header">
         <Link to="/">About</Link>
-        <Link to="/races">Search Races</Link>
+        <Link to="/races">Search</Link>
           {!TokenService.hasAuthToken()
           && <Link to="/login">Login</Link>
           }

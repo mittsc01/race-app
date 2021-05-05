@@ -84,7 +84,8 @@ export default function MyResults(props) {
         .map((result, i) => 
         <li key={`result-${i}`}><span className='left-side'>{`${result.place}. ${result.name}`}</span>
         <span className="right-side">{result.time}</span>
-            <button id={result.id} onClick={e => handleDelete(e)}>Delete</button>
+        <span><button id={result.id} onClick={e => handleDelete(e)}>Delete</button></span>
+            
         </li>
         )
         
