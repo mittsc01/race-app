@@ -42,6 +42,7 @@ export default function RaceDetail(props) {
             <p>Date: {race.date?prettifyDate(race.date):null}</p>
             <p>Time: {race.time?prettifyTime(race.time):null}</p>
             <p>Location: {race.city}, {race.state}</p>
+            <p>Distance: {race.distance}</p>
             <p><Link to={`/races/${race.id}/results`}>Results</Link></p>
             <button onClick={() => props.history.goBack()}>Back</button>
         </div>

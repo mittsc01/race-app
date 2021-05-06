@@ -23,4 +23,4 @@ Race Director is a simple way to add races and results.  It's as straightforward
 * CSS
 
 ## Screenshots
-
+![Search for races screenshot](/public/screenshots-raceapp/results-detail)

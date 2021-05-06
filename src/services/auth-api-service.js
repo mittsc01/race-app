@@ -72,7 +72,7 @@ const AuthApiService = {
       })
       .catch(err => {
         
-        //console.error(err)
+        
       })
   },
 }

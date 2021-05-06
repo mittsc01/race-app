@@ -13,5 +13,13 @@ exports[`renders the UI as expected 1`] = `
   <p>
     Go to My Races to manage your races and results. Go to Races to search for races by name.
   </p>
+  <p>
+    To try out a demo, click 'Go': 
+    <button
+      onClick={[Function]}
+    >
+      Go
+    </button>
+  </p>
 </div>
 `;

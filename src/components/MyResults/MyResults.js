@@ -96,7 +96,12 @@ export default function MyResults(props) {
             ? <h2>{myResults.name}</h2>
             :null
             }
+            
             <p className="race-info">
+            {myResults.distance
+                ? <span>{myResults.distance}, </span>
+                : null
+            }
             {myResults.city
             ? <span>{myResults.city} </span>
             :null
